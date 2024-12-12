@@ -5,42 +5,41 @@
 
 ### This project demonstrates how to build an automated, event-driven image processing pipeline using AWS Lambda and S3. When an image is uploaded to a source S3 bucket, an AWS Lambda function is triggered, which processes the image by pixelating it into five different resolutions: 8x8, 16x16, 32x32, 48x48, and 64x64, using the Pillow (PIL) library. The processed images are then stored in a processed S3 bucket. This project leverages a fully serverless architecture, ensuring scalability and cost-effectiveness.
 
-## Project Solution:
+### What You Will Learn
+- **Event-Driven Architecture**: Trigger AWS Lambda functions in response to S3 events.  
+- **Image Processing with Python**: Use the Pillow library to manipulate images, including pixelation.  
+- **S3 Bucket Management**: Handle objects across multiple S3 buckets, including permissions and event notifications.  
+- **Error Handling**: Implement best practices for reliable Lambda function execution.  
+- **Serverless Deployment**: Deploy a fully serverless pipeline on AWS for real-time, automated tasks.
 
-## Stage 1: Create the S3 Buckets
-Bucket 1: amc-image-pixelater-source
-Bucket 2: amc-image-pixelater-processed
+---
 
-## Stage 2: Develop the Lambda Function Code:
+### Pixelation Use Cases
+- **Privacy Protection**: Anonymize sensitive areas in images.  
+- **Creative Design**: Create retro or abstract art and stylized effects.  
+- **Data Reduction**: Generate low-resolution previews for bandwidth efficiency.  
+- **Compression Previews**: Use pixelation for progressive loading in videos or images.  
+- **Machine Learning**: Simplify images for training models or pattern recognition.
 
+---
 
- - Create a folder named my_lambda_deployment.
-   
-   Move into that folder (cd my_lambda_deployment).
-   
-   Create a folder called lambda.
-   
-   Move into that folder (cd lambda).
-   
-   Create a file called lambda_function.py and paste in the code for the
-   pixelator Lambda function.
-   
-   Download this file PIL Package into that folder.
-   
-   Run unzip
-   Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-   and then rm
-   Pillow-9.0.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.
-   These are the Pillow module files required for image manipulation in
-   Python 3.9 (which the lambda function will be using).
-   
-   From the same folder, run zip -r ../my-deployment-package.zip . which
-   will create a lambda function zip, containing all these files in the
-   parent directory.
-   
-   This zip will be the same zip which is linked below, so if you have
-   any issues with the lambda function, you can use the one that's
-   pre-created.
+### Project Workflow
+1. **Create S3 Buckets**  
+   - Source bucket: `amc-image-pixelater-source`.  
+   - Processed bucket: `amc-image-pixelater-processed`.  
 
-## Stage 3 - Create and Configure the Lambda Function
-## Stage 4 - Test and Monitor
+2. **Develop the Lambda Function**  
+   - Write the `lambda_function.py` code to pixelate images.  
+   - Package the function and dependencies into a `.zip` file.  
+
+3. **Deploy and Configure Lambda**  
+   - Upload the function to AWS Lambda.  
+   - Configure triggers and permissions.  
+
+4. **Test and Monitor**  
+   - Validate functionality and monitor logs.  
+
+---
+
+### Outcome
+You’ll create an automated, serverless image processing pipeline that pixelates images at multiple resolutions. Processed images will be stored in a separate S3 bucket, providing a scalable and efficient solution for real-time tasks.
