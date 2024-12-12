@@ -1,5 +1,7 @@
 # Event-Driven Image Processing Pipeline with AWS Lambda and S3
 
+
+![architectura](architecture.png)
 ### This project demonstrates how to build an automated, event-driven image processing pipeline using AWS Lambda and S3. When an image is uploaded to a source S3 bucket, an AWS Lambda function is triggered, which processes the image by pixelating it into five different resolutions: 8x8, 16x16, 32x32, 48x48, and 64x64, using the Pillow (PIL) library. The processed images are then stored in a processed S3 bucket. This project leverages a fully serverless architecture, ensuring scalability and cost-effectiveness.
 
 ## Project Solution:
